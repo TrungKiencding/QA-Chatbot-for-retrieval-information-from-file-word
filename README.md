@@ -1,6 +1,6 @@
 # QA Chatbot for retrieval information from file word
 
-![logo.png](images\logo.png)
+![logo.png](images/logo.png)
 
 > [!IMPORTANT]
 > Disclaimer:
@@ -36,7 +36,7 @@ and [Chainlit](https://github.com/Chainlit/chainlit) to build:
 
 The QA Chatbot system works by retrieving data from a docx document, parsing that data and storing it in a vector database. When users asks a question, the system will retrieve information from the vector database related to the question. Then create a prompt based on the context-information retrieved from the document and the question. The prompt will be sent to the model. The Qwen model will give an answer based on that prompt.
 
-![pipeline_system.png](images\pipeline_system.png)
+![pipeline_system.png](images/pipeline_system.png)
 
 ## What's new in the system
 
@@ -44,27 +44,27 @@ The QA Chatbot system works by retrieving data from a docx document, parsing tha
 > We have improved the document parsing method of the QA chatbot system to be able to understand and process documents containing tables and lists. Thereby improving the ability to answer questions related to tables and lists in document.
 
 ### Current issue: 
-    After testing and evaluating, we realized that language models often cannot understand structured data like: table, list,... Current solutions are often documents are converted to plain text. For example, if you have a table in the document, the table will be converted to text like: column A contains: ..., column B contains: ... This helps models understand the context and better answer questions related to the table. However, the above method loses the spatial structure of the table. Questions related to the location or aggregation of values ​​from the table will cause problems for the model.
+After testing and evaluating, we realized that language models often cannot understand structured data like: table, list,... Current solutions are often documents are converted to plain text. For example, if you have a table in the document, the table will be converted to text like: column A contains: ..., column B contains: ... This helps models understand the context and better answer questions related to the table. However, the above method loses the spatial structure of the table. Questions related to the location or aggregation of values ​​from the table will cause problems for the model.
 
 ### Our solution:
-    After testing, we realized that the models can understand `json` or `markdown` syntax well. Therefore, our solution to this problem is to parse the information sources in the docx file and convert it to `markdown`. Then embedding and feeding into the vector database.
+After testing, we realized that the models can understand `json` or `markdown` syntax well. Therefore, our solution to this problem is to parse the information sources in the docx file and convert it to `markdown`. Then embedding and feeding into the vector database.
 
-    ![docx2md.png](images\docx2md.png)
+![docx2md.png](images/docx2md.png)
 
-    In addition, to improve the quality of answers for the model, we will divide and label the markdown chunks such as: table, list, paragraph, heading,... . Depending on each type above, there will be a different prompt, helping the model to give better answers.
+In addition, to improve the quality of answers for the model, we will divide and label the markdown chunks such as: table, list, paragraph, heading,... . Depending on each type above, there will be a different prompt, helping the model to give better answers.
 
-    ![docx2md_lb.png](images\docx2md_lb.png)
+![docx2md_lb.png](images/docx2md_lb.png)
 
 ### Evaluation:
-    1. Traditional evaluation methods with: BLEU, ROUNGE, METEOR:
+1. Traditional evaluation methods with: BLEU, ROUNGE, METEOR:
 
-    ![chart_table.png](images\chart_table.png)
-    ![chart_list.png](images\chart_list.png)
+![chart_table.png](images/chart_table.png)
+![chart_list.png](images/chart_list.png)
 
-    2. LLM-as-a-judge:
-    * LLM-as-a-judge is a common technique to evaluate LLM-powered products. 
-    * It grew popular for a reason: it’s a practical alternative to costly human evaluation when assessing open-ended text outputs.
-    * Judging generated texts is tricky—whether it's a “simple” summary or a chatbot conversation. Metrics like accuracy don’t work well because there are many ways to be “right” without exactly matching the example answer. And things like style or tone are subjective and hard to pin down.
+2. LLM-as-a-judge:
+* LLM-as-a-judge is a common technique to evaluate LLM-powered products. 
+* It grew popular for a reason: it’s a practical alternative to costly human evaluation when assessing open-ended text outputs.
+* Judging generated texts is tricky—whether it's a “simple” summary or a chatbot conversation. Metrics like accuracy don’t work well because there are many ways to be “right” without exactly matching the example answer. And things like style or tone are subjective and hard to pin down.
 
 <summary> Click to see RESULTS</summary>
 
@@ -90,7 +90,7 @@ Therefore, Thomas has the lowest total point, with a score of 6 out of 15 | 1 | 
 git clone https://github.com/TrungKiencding/QA-Chatbot-for-retrieval-information-from-file-word
 cd QA-Chatbot-for-retrieval-information-from-file-word
 ```
-   2. **Install the required dependencies:**
+2. **Install the required dependencies:**
 
 ```bash
 pip install -r requirements.txt
@@ -109,7 +109,7 @@ chainlit run chatbot_qwen_pdx.py
 ## Example
 
 Interface of QA chatbot system with chainlit:
-![interface.png](images\interface.png)
+![interface.png](images/interface.png)
 
 ## Data
 
