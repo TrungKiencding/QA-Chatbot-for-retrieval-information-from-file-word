@@ -70,10 +70,10 @@ In addition, to improve the quality of answers for the model, we will divide and
 
 | user_input | retrieved_contexts | response | context_recall | factual_correctness | faithfulness |
 |------------|---------------------|----------|-----------------|---------------------|---------------|
-| Who has the most total point? | "Scoreboard of participants...\n| :- | :- | :- | :- | :- |\n|Kelvin|5|5|5|15|\n|Thomas|3|2|1|6||Khav...\n" | Based on the information provided, Kelvin has the most total point... | 1 | 0.18 | 0.352425 |
+| Who has the most total point? | "Scoreboard of participants...| :- | :- | :- | :- | :- ||Kelvin|5|5|5|15||Thomas|3|2|1|6||Khav..." | Based on the information provided, Kelvin has the most total point... | 1 | 0.18 | 0.352425 |
 | Who has the lowest total point? ? | "Scoreboard of participants...| :- | :- | :- | :- | :- ||Kelvin|5|5|5|15||Thomas|3|2|1|6||Khav..." | Based on the information provided:
 Therefore, Thomas has the lowest total point, with a score of 6 out of 15 | 1 | 0.17 | 0.21242 |
-| How many things you can bring to hackathon ? | "List of thing you can bring to hackathon:\n - Laptop\n - Pen\n - Papers\n - Watch\n - Your GPUs\n" | Based on the information provided, you can bring several items to a hackathon, including: ... | 1 | 0.5 | 0.5464 |
+| How many things you can bring to hackathon ? | "List of thing you can bring to hackathon:- Laptop - Pen - Papers - Watch - Your GPUs" | Based on the information provided, you can bring several items to a hackathon, including: ... | 1 | 0.5 | 0.5464 |
 </details>
 
 
