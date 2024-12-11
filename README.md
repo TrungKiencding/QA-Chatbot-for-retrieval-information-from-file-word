@@ -66,7 +66,7 @@ In addition, to improve the quality of answers for the model, we will divide and
 * It grew popular for a reason: it’s a practical alternative to costly human evaluation when assessing open-ended text outputs.
 * Judging generated texts is tricky—whether it's a “simple” summary or a chatbot conversation. Metrics like accuracy don’t work well because there are many ways to be “right” without exactly matching the example answer. And things like style or tone are subjective and hard to pin down.
 
-<summary> Click to see RESULTS</summary>
+Click to see RESULTS
 
 | user_input | retrieved_contexts | response | context_recall | factual_correctness | faithfulness |
 |------------|---------------------|----------|-----------------|---------------------|---------------|
