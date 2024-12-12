@@ -1,4 +1,4 @@
-# QA Chatbot for retrieval information from file word
+# QA Chatbot retrieval information from docx file
 
 ![logo.png](images/logo.png)
 
